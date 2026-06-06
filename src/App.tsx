@@ -43,6 +43,8 @@ import championsTrophyImg from './assets/images/champions_trophy_1780658255360.p
 import vipGuestsImg from './assets/images/vip_guests_1780658272891.png';
 // @ts-ignore
 import exhibitionMatchImg from './assets/images/jcl_cricket_match_1780733167283.png';
+// @ts-ignore
+import jclLogoImg from './assets/images/jcl_royal_logo_1780737202442.png';
 
 const HERO_SLIDES = [
   {
@@ -171,15 +173,18 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
           
           {/* Logo on Left */}
-          <div className="flex items-center space-x-3 cursor-pointer select-none" onClick={() => scrollToSection('home-section', 'home')}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-600 flex items-center justify-center p-0.5 shadow-md shadow-cyan-500/15">
-              <div className="bg-slate-950 w-full h-full rounded-[10px] flex items-center justify-center">
-                <span className="font-sans font-black text-white text-lg tracking-tighter">JCL</span>
-              </div>
+          <div className="flex items-center space-x-3 cursor-pointer select-none group" onClick={() => scrollToSection('home-section', 'home')}>
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-yellow-400 via-amber-500 to-blue-600 flex items-center justify-center p-0.5 shadow-lg shadow-yellow-500/10 group-hover:shadow-yellow-500/20 group-hover:scale-105 transition-all duration-300">
+              <img 
+                src={jclLogoImg} 
+                alt="Jaat Cricket League Logo" 
+                className="w-full h-full rounded-[10px] object-cover" 
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-extrabold text-white text-base tracking-tight font-sans leading-none">JAAT CRICKET</span>
-              <span className="text-[10px] text-cyan-400 font-bold tracking-widest leading-none mt-1">LEAGUE</span>
+              <span className="font-sans font-black text-white text-base sm:text-lg tracking-tight leading-none group-hover:text-yellow-400 transition-colors">JAAT CRICKET</span>
+              <span className="text-[10px] text-yellow-400 font-bold tracking-widest leading-none mt-1 uppercase">LEAGUE</span>
             </div>
           </div>
 
@@ -253,9 +258,19 @@ export default function App() {
                 className="fixed top-0 right-0 bottom-0 z-50 w-76 max-w-[85vw] bg-[#0d0935] shadow-2xl border-l border-indigo-950/40 p-6 flex flex-col md:hidden"
               >
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-indigo-950/40">
-                  <div className="flex flex-col">
-                    <span className="font-extrabold text-white text-sm tracking-widest font-sans uppercase">JCL NAVIGATOR</span>
-                    <span className="text-[9px] text-cyan-400 font-bold tracking-widest uppercase mt-0.5">Jaat Cricket League</span>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-400 to-amber-500 p-0.5 shadow-md shadow-yellow-500/10">
+                      <img 
+                        src={jclLogoImg} 
+                        alt="JCL Logo" 
+                        className="w-full h-full rounded-[6px] object-cover" 
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-extrabold text-white text-xs tracking-wider font-sans uppercase">JCL NAVIGATOR</span>
+                      <span className="text-[8px] text-yellow-400 font-bold tracking-widest uppercase">Jaat Cricket League</span>
+                    </div>
                   </div>
                   <button
                     onClick={() => setMobileMenuOpen(false)}
@@ -1032,15 +1047,18 @@ export default function App() {
             <div className="md:col-span-4 flex flex-col items-start space-y-6">
               
               {/* Footer JCL Brand Graphic */}
-              <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-600 flex items-center justify-center p-0.5">
-                  <div className="bg-slate-950 w-full h-full rounded-[10px] flex items-center justify-center">
-                    <span className="font-sans font-black text-white text-base tracking-tighter">JCL</span>
-                  </div>
+              <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center p-0.5 shadow-md shadow-yellow-500/5 group-hover:scale-105 transition-all duration-300">
+                  <img 
+                    src={jclLogoImg} 
+                    alt="JCL Royal Crest Logo" 
+                    className="w-full h-full rounded-[9px] object-cover" 
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-extrabold text-white text-sm tracking-tight leading-none">JAAT CRICKET</span>
-                  <span className="text-[9px] text-cyan-400 font-bold tracking-widest leading-none mt-1">LEAGUE</span>
+                  <span className="font-sans font-black text-white text-sm tracking-tight leading-none group-hover:text-yellow-400 transition-colors">JAAT CRICKET</span>
+                  <span className="text-[9px] text-yellow-400 font-bold tracking-widest leading-none mt-1 uppercase">LEAGUE</span>
                 </div>
               </div>
 
