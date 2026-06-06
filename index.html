@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jaat Cricket League - Official JCL Website</title>
+    <!-- Preconnect performance hints for faster asset handshaking on mobile -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://picsum.photos" crossorigin />
+    <link rel="dns-prefetch" href="https://picsum.photos" />
+    <script>
+      (function() {
+        try {
+          var currentFetch = window.fetch;
+          var patch = {
+            get: function() {
+              return currentFetch;
+            },
+            set: function(value) {
+              currentFetch = value;
+            },
+            configurable: true,
+            enumerable: true
+          };
+          try {
+            Object.defineProperty(window, 'fetch', patch);
+          } catch (e) {}
+          try {
+            Object.defineProperty(Window.prototype, 'fetch', patch);
+          } catch (e) {}
+        } catch (err) {
+          console.warn("Could not patch window.fetch early:", err);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

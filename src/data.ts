@@ -1,0 +1,352 @@
+import { Team, Match, Sponsor, Video } from './types';
+
+export const TEAMS: Team[] = [
+  {
+    id: 'haryana-hurricanes',
+    name: 'Haryana Hurricanes',
+    fullName: 'Haryana Hurricanes JCL',
+    type: 'domestic',
+    mascot: 'Hurricanes',
+    logoColor: 'from-amber-500 to-yellow-600',
+    primaryColor: '#f59e0b',
+    secondaryColor: '#d97706',
+    description: 'The powerhouse of northern cricket. Comprising elite local talent known for explosive hitting and lightning-fast medium-pace bowling.',
+    captain: 'Amit Khrinta',
+    coach: 'Sandeep Rathi',
+    founded: '2026',
+    tagline: 'Storm of the Soil',
+    logoSvgSeed: 'hurricanes',
+    stats: { played: 0, won: 0, lost: 0, draws: 0, points: 0 },
+    roster: [
+      { name: 'Amit Khrinta', role: 'All-rounder', nationality: 'India', jerseyNo: 17 },
+      { name: 'Ravinder Chaudhary', role: 'Batsman', nationality: 'India', jerseyNo: 45 },
+      { name: 'Jaideep Gill', role: 'Bowler', nationality: 'India', jerseyNo: 99 },
+      { name: 'Sukhvinder Singh', role: 'Wicket-keeper', nationality: 'India', jerseyNo: 1 },
+      { name: 'Manjeet Hooda', role: 'Batsman', nationality: 'India', jerseyNo: 10 },
+      { name: 'Dharmender Sheoran', role: 'Bowler', nationality: 'India', jerseyNo: 8 },
+      { name: 'Kuldeep Sehrawat', role: 'All-rounder', nationality: 'India', jerseyNo: 7 }
+    ]
+  },
+  {
+    id: 'delhi-dynamites',
+    name: 'Delhi Dynamites',
+    fullName: 'Delhi Dynamites United',
+    type: 'domestic',
+    mascot: 'Dynamites',
+    logoColor: 'from-rose-500 to-red-700',
+    primaryColor: '#f43f5e',
+    secondaryColor: '#b91c1c',
+    description: 'Representing the capital with absolute fire. A team built on high-precision spin and devastating top-order explosive batsmen.',
+    captain: 'Pankaj Khrinta',
+    coach: 'Rajendra Singh',
+    founded: '2026',
+    tagline: 'Explosive Pride, Boundless Power',
+    logoSvgSeed: 'dynamites',
+    stats: { played: 0, won: 0, lost: 0, draws: 0, points: 0 },
+    roster: [
+      { name: 'Pankaj Khrinta', role: 'Batsman', nationality: 'India', jerseyNo: 18 },
+      { name: 'Nihal Grewal', role: 'Bowler', nationality: 'India', jerseyNo: 23 },
+      { name: 'Navdeep Sangwan', role: 'All-rounder', nationality: 'India', jerseyNo: 33 },
+      { name: 'Vivek Ahlawat', role: 'Wicket-keeper', nationality: 'India', jerseyNo: 3 },
+      { name: 'Karan Sangwan', role: 'Batsman', nationality: 'India', jerseyNo: 11 },
+      { name: 'Harsh Dhillon', role: 'Bowler', nationality: 'India', jerseyNo: 88 },
+      { name: 'Sumit Mor', role: 'All-rounder', nationality: 'India', jerseyNo: 9 }
+    ]
+  },
+  {
+    id: 'rajasthan-rangers',
+    name: 'Rajasthan Rangers',
+    fullName: 'Rajasthan Rangers Desert Stars',
+    type: 'domestic',
+    mascot: 'Rangers',
+    logoColor: 'from-orange-500 to-amber-600',
+    primaryColor: '#ea580c',
+    secondaryColor: '#d97706',
+    description: 'Forged in the legendary desert sun. Known for resilient defense on tricky pitches and unmatched fitness on the field.',
+    captain: 'Vikram Godara',
+    coach: 'Hanuman Singh',
+    founded: '2026',
+    tagline: 'Desert Grit, Imperial Strike',
+    logoSvgSeed: 'rangers',
+    stats: { played: 0, won: 0, lost: 0, draws: 0, points: 0 },
+    roster: [
+      { name: 'Vikram Godara', role: 'All-rounder', nationality: 'India', jerseyNo: 10 },
+      { name: 'Surender Beniwal', role: 'Batsman', nationality: 'India', jerseyNo: 7 },
+      { name: 'Mahesh Saran', role: 'Bowler', nationality: 'India', jerseyNo: 14 },
+      { name: 'Ritesh Kaswan', role: 'Wicket-keeper', nationality: 'India', jerseyNo: 12 },
+      { name: 'Sandip Jakhar', role: 'Batsman', nationality: 'India', jerseyNo: 22 },
+      { name: 'Rohit Jhajharia', role: 'Bowler', nationality: 'India', jerseyNo: 55 },
+      { name: 'Pradeep Sihag', role: 'All-rounder', nationality: 'India', jerseyNo: 4 }
+    ]
+  },
+  {
+    id: 'up-united',
+    name: 'UP United',
+    fullName: 'UP United Cricket Club',
+    type: 'domestic',
+    mascot: 'United',
+    logoColor: 'from-indigo-600 to-blue-700',
+    primaryColor: '#4f46e5',
+    secondaryColor: '#1d4ed8',
+    description: 'A stellar faction representing Uttar Pradesh. Combining sharp tactical bowling changes with absolute team cohesion.',
+    captain: 'Ajay Solanki',
+    coach: 'Devender Malik',
+    founded: '2026',
+    tagline: 'Victory with Grit and Unity',
+    logoSvgSeed: 'united',
+    stats: { played: 0, won: 0, lost: 0, draws: 0, points: 0 },
+    roster: [
+      { name: 'Ajay Solanki', role: 'Bowler', nationality: 'India', jerseyNo: 9 },
+      { name: 'Anuj Tomar', role: 'Batsman', nationality: 'India', jerseyNo: 99 },
+      { name: 'Ravi Baliyan', role: 'All-rounder', nationality: 'India', jerseyNo: 16 },
+      { name: 'Shubham Sirohi', role: 'Wicket-keeper', nationality: 'India', jerseyNo: 22 },
+      { name: 'Preet Lamba', role: 'Batsman', nationality: 'India', jerseyNo: 5 },
+      { name: 'Harshit Rathi', role: 'Bowler', nationality: 'India', jerseyNo: 44 },
+      { name: 'Naveen Panwar', role: 'All-rounder', nationality: 'India', jerseyNo: 12 }
+    ]
+  },
+  {
+    id: 'punjab-panthers',
+    name: 'Punjab Panthers',
+    fullName: 'Punjab Panthers Cricket',
+    type: 'domestic',
+    mascot: 'Panthers',
+    logoColor: 'from-amber-400 to-orange-500',
+    primaryColor: '#fbbf24',
+    secondaryColor: '#f97316',
+    description: 'Fierce, unstoppable, and deeply passionate. The Panthers play cricket at a crushing tempo with robust physical intent and explosive boundary chasing.',
+    captain: 'Gaurav Kahlon',
+    coach: 'Harbhajan Singh B',
+    founded: '2026',
+    tagline: 'Fierce and Unstoppable',
+    logoSvgSeed: 'panthers',
+    stats: { played: 0, won: 0, lost: 0, draws: 0, points: 0 },
+    roster: [
+      { name: 'Gaurav Kahlon', role: 'Batsman', nationality: 'India', jerseyNo: 3 },
+      { name: 'Amanpreet Gill', role: 'Bowler', nationality: 'India', jerseyNo: 28 },
+      { name: 'Sartaj Dhillon', role: 'All-rounder', nationality: 'India', jerseyNo: 77 },
+      { name: 'Maninder Grewal', role: 'Wicket-keeper', nationality: 'India', jerseyNo: 13 },
+      { name: 'Jagdeep Bajwa', role: 'Batsman', nationality: 'India', jerseyNo: 4 },
+      { name: 'Satnam Sidhu', role: 'Bowler', nationality: 'India', jerseyNo: 91 },
+      { name: 'Harsh Deep', role: 'All-rounder', nationality: 'India', jerseyNo: 18 }
+    ]
+  },
+  {
+    id: 'mewar-monarchs',
+    name: 'Mewar Monarchs',
+    fullName: 'Mewar Monarchs Club',
+    type: 'domestic',
+    mascot: 'Monarchs',
+    logoColor: 'from-cyan-400 to-indigo-600',
+    primaryColor: '#06b6d4',
+    secondaryColor: '#4f46e5',
+    description: 'Combining serene minds with royal strokes. Mewar Monarchs bring surgical modern batting tactics paired with highly aggressive death-overs bowling.',
+    captain: 'Bhupendra Mewara',
+    coach: 'Randhir Ranawat',
+    founded: '2026',
+    tagline: 'Calm Minds, Royal Strikes',
+    logoSvgSeed: 'monarchs',
+    stats: { played: 0, won: 0, lost: 0, draws: 0, points: 0 },
+    roster: [
+      { name: 'Bhupendra Mewara', role: 'Wicket-keeper', nationality: 'India', jerseyNo: 8 },
+      { name: 'Sachin Chhillar', role: 'Batsman', nationality: 'India', jerseyNo: 15 },
+      { name: 'Vijaypal Sisodia', role: 'Bowler', nationality: 'India', jerseyNo: 21 },
+      { name: 'Lokendra Singh', role: 'All-rounder', nationality: 'India', jerseyNo: 10 },
+      { name: 'Jasvir Rajawat', role: 'Batsman', nationality: 'India', jerseyNo: 44 },
+      { name: 'Devendra Jhala', role: 'Bowler', nationality: 'India', jerseyNo: 11 },
+      { name: 'Praveen Ranawat', role: 'All-rounder', nationality: 'India', jerseyNo: 2 }
+    ]
+  },
+  {
+    id: 'jaipur-jaguars',
+    name: 'Jaipur Jaguars',
+    fullName: 'Jaipur Jaguars Cricket',
+    type: 'domestic',
+    mascot: 'Jaguars',
+    logoColor: 'from-yellow-400 to-slate-900',
+    primaryColor: '#facc15',
+    secondaryColor: '#0f172a',
+    description: 'Representing the Pink City with majestic pride. A highly modular team of supreme fielders, brilliant run-accumulators, and cunning swing-bowlers.',
+    captain: 'Yogesh Dhaka',
+    coach: 'Srinivas Murthy',
+    founded: '2026',
+    tagline: 'Roar of the Pink City',
+    logoSvgSeed: 'jaguars',
+    stats: { played: 0, won: 0, lost: 0, draws: 0, points: 0 },
+    roster: [
+      { name: 'Yogesh Dhaka', role: 'Batsman', nationality: 'India', jerseyNo: 2 },
+      { name: 'Kapil Poonia', role: 'Bowler', nationality: 'India', jerseyNo: 6 },
+      { name: 'Yogendra Godara', role: 'All-rounder', nationality: 'India', jerseyNo: 88 },
+      { name: 'Prashant Khirwar', role: 'Wicket-keeper', nationality: 'India', jerseyNo: 14 },
+      { name: 'Amit Grewal', role: 'Batsman', nationality: 'India', jerseyNo: 7 },
+      { name: 'Rahul Chahar Jr.', role: 'Bowler', nationality: 'India', jerseyNo: 32 },
+      { name: 'Manjeet Pilania', role: 'All-rounder', nationality: 'India', jerseyNo: 19 }
+    ]
+  },
+  {
+    id: 'jodhana-warriors',
+    name: 'Jodhana Warriors',
+    fullName: 'Jodhana Warriors Cricket',
+    type: 'domestic',
+    mascot: 'Warriors',
+    logoColor: 'from-indigo-600 to-amber-500',
+    primaryColor: '#4f46e5',
+    secondaryColor: '#f59e0b',
+    description: 'Bringing classical cricket textbook action modified for modern maximum formats. Boasting the highest dot-ball ratio in practice nets.',
+    captain: 'Abhay Chahar',
+    coach: 'Anup Jakhar',
+    founded: '2026',
+    tagline: 'Blue City Champions',
+    logoSvgSeed: 'warriors',
+    stats: { played: 0, won: 0, lost: 0, draws: 0, points: 0 },
+    roster: [
+      { name: 'Abhay Chahar', role: 'All-rounder', nationality: 'India', jerseyNo: 5 },
+      { name: 'Ashish Jhajharia', role: 'Batsman', nationality: 'India', jerseyNo: 66 },
+      { name: 'Praveen Sangwan Jr.', role: 'Bowler', nationality: 'India', jerseyNo: 24 },
+      { name: 'Devinder Beniwal', role: 'Wicket-keeper', nationality: 'India', jerseyNo: 70 },
+      { name: 'Sujit Punia', role: 'Batsman', nationality: 'India', jerseyNo: 11 },
+      { name: 'Ravinder Sheoran', role: 'Bowler', nationality: 'India', jerseyNo: 27 },
+      { name: 'Pawan Khrinta', role: 'All-rounder', nationality: 'India', jerseyNo: 9 }
+    ]
+  }
+];
+
+export const MATCHES: Match[] = [
+  {
+    id: 'match-1',
+    teamAId: 'haryana-hurricanes',
+    teamBId: 'delhi-dynamites',
+    teamAName: 'Haryana Hurricanes',
+    teamBName: 'Delhi Dynamites',
+    teamALogoColor: 'from-amber-500 to-yellow-600',
+    teamBLogoColor: 'from-rose-500 to-red-700',
+    date: 'Jun 15, 2026',
+    time: '19:30 IST',
+    status: 'upcoming',
+    venue: 'SNEXGEN Grounds, Major City',
+    round: 'League Stage - Match 1'
+  },
+  {
+    id: 'match-2',
+    teamAId: 'rajasthan-rangers',
+    teamBId: 'up-united',
+    teamAName: 'Rajasthan Rangers',
+    teamBName: 'UP United',
+    teamALogoColor: 'from-orange-500 to-amber-600',
+    teamBLogoColor: 'from-indigo-600 to-blue-700',
+    date: 'Jun 16, 2026',
+    time: '19:30 IST',
+    status: 'upcoming',
+    venue: 'SNEXGEN Grounds, Major City',
+    round: 'League Stage - Match 2'
+  },
+  {
+    id: 'match-3',
+    teamAId: 'punjab-panthers',
+    teamBId: 'mewar-monarchs',
+    teamAName: 'Punjab Panthers',
+    teamBName: 'Mewar Monarchs',
+    teamALogoColor: 'from-amber-400 to-orange-500',
+    teamBLogoColor: 'from-cyan-400 to-indigo-600',
+    date: 'Jun 17, 2026',
+    time: '19:30 IST',
+    status: 'upcoming',
+    venue: 'SNEXGEN Grounds, Major City',
+    round: 'League Stage - Match 3'
+  },
+  {
+    id: 'match-4',
+    teamAId: 'jaipur-jaguars',
+    teamBId: 'jodhana-warriors',
+    teamAName: 'Jaipur Jaguars',
+    teamBName: 'Jodhana Warriors',
+    teamALogoColor: 'from-yellow-400 to-slate-900',
+    teamBLogoColor: 'from-indigo-600 to-amber-500',
+    date: 'Jun 18, 2026',
+    time: '19:30 IST',
+    status: 'upcoming',
+    venue: 'SNEXGEN Grounds, Major City',
+    round: 'League Stage - Match 4'
+  },
+  {
+    id: 'match-5',
+    teamAId: 'haryana-hurricanes',
+    teamBId: 'rajasthan-rangers',
+    teamAName: 'Haryana Hurricanes',
+    teamBName: 'Rajasthan Rangers',
+    teamALogoColor: 'from-amber-500 to-yellow-600',
+    teamBLogoColor: 'from-orange-500 to-amber-600',
+    date: 'Jun 19, 2026',
+    time: '19:30 IST',
+    status: 'upcoming',
+    venue: 'SNEXGEN Grounds, Major City',
+    round: 'League Stage - Match 5'
+  }
+];
+
+export const SPONSORS: Sponsor[] = [
+  { id: 'intl-jaat-parliament', name: 'International Jaat Parliament', category: 'Title Sponsor', logoType: 'text', accentColor: '#e11d48', subtitle: 'In Association With' },
+  { id: 'snexgen-sports', name: 'SNEXGEN SPORTS FOUNDATION', category: 'Powered By', logoType: 'combined', accentColor: '#15803d', subtitle: 'Organising Partner' },
+  { id: 'dainik-bhaskar', name: 'दैनिक भास्कर', category: 'Digital Partner', logoType: 'text', accentColor: '#f59e0b', subtitle: 'Media Partner' },
+  { id: 'defined-group', name: 'Defined Group', category: 'Associate Partner', logoType: 'combined', accentColor: '#0369a1', subtitle: 'Infrastructure Support' },
+  { id: 'myteam11', name: 'MyTeam11', category: 'Associate Partner', logoType: 'combined', accentColor: '#0284c7', subtitle: 'Fantasy League Partner' },
+  { id: 'jiocinema', name: 'JioCinema', category: 'Associate Partner', logoType: 'combined', accentColor: '#be185d', subtitle: 'Official Broadcast' }
+];
+
+export const VIDEOS: Video[] = [
+  {
+    id: 'jcl-live-day1',
+    title: '!! LIVE !! Day 01 Jaat Premier League Tournament - Full Match Broadcast',
+    duration: '02:45:10',
+    views: '342K Views',
+    thumbnail: 'https://images.unsplash.com/photo-1540747737956-378724044602?q=75&w=600&auto=format&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=eX1qhc3GIxo',
+    description: 'Relive the massive high-voltage coverage of Day 1 of the Jaat Premier League. Watch aspiring talents and experienced powerhouse players compete for regional dominance in a premium tournament format.',
+    date: 'Live Recording',
+    category: 'Match Replays'
+  },
+  {
+    id: 'jcl-highlights-jaipur',
+    title: 'Jat Premier League Season 3 Jaipur - Karol Ground Match Highlights',
+    duration: '11:45',
+    views: '185K Views',
+    thumbnail: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=75&w=600&auto=format&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=IeibP9_q9jM',
+    description: 'High stakes highlights pack from Karol Ground 1 (Jaipur) during Jat Premier League Season 3. Exceptional individual runs, strategic field placement adjustments, and game-changing wickets.',
+    date: '1 month ago',
+    category: 'Highlights'
+  },
+  {
+    id: 'jcl-eliminator',
+    title: 'Jat Tigers vs Jat Panthers - JCL Super Cup Eliminator Game',
+    duration: '14:20',
+    views: '210K Views',
+    thumbnail: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=75&w=600&auto=format&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=vllC_VkP3uE',
+    description: 'The ultimate knockouts match! Jat Tigers locked horns with Jat Panthers in the JCL Super Cup Eliminator. Catch every boundary, brilliant catch, and tactical play in this highlight package.',
+    date: '2 weeks ago',
+    category: 'Match Replays'
+  },
+  {
+    id: 'jcl-nets-2',
+    title: 'Behind the Scenes: JCL Professional Training Camps & Nets Warmup Highlights',
+    duration: '08:45',
+    views: '85K Views',
+    thumbnail: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=75&w=600&auto=format&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=IeibP9_q9jM',
+    description: 'Go behind the curtains at Jaipur. Candidates sweating in net sessions, receiving bowling release instructions from expert coaches, and dialing in batsman stance adjustments.',
+    date: '1 week ago',
+    category: 'Behind The Scenes'
+  },
+  {
+    id: 'jcl-masterclass-1',
+    title: 'JCL Masterclass: Elite Spin Variations & Power-Hitting Mechanics',
+    duration: '10:15',
+    views: '112K Views',
+    thumbnail: 'https://images.unsplash.com/photo-1540747737956-378724044602?q=75&w=600&auto=format&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=eX1qhc3GIxo',
+    description: 'A special training module focused on wrist turn mechanics, spin variations, batsman body weight pivot during maximum hits, and death-over run-rate defense skills.',
+    date: '5 days ago',
+    category: 'Masterclass'
+  }
+];

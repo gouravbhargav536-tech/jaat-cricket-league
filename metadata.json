@@ -1,0 +1,8 @@
+{
+  "name": "Jaat Cricket League Showcase",
+  "description": "An elegant, responsive replica and interactive showcase of the Jaat Cricket League (JCL) website, highlighting domestic squads and official partners.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
