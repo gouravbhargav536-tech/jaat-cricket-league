@@ -22,6 +22,9 @@ import {
 import { TEAMS, MATCHES, SPONSORS } from '../data';
 import { Team, Match } from '../types';
 
+// @ts-ignore
+import vipGuestsImg from '../assets/images/vip_guests_1780658272891.png';
+
 interface OverlayPanelProps {
   isOpen: boolean;
   onClose: () => void;
@@ -694,48 +697,18 @@ export function OverlayPanel({ isOpen, onClose, tabName }: OverlayPanelProps) {
 
           {/* 6. ABOUT US SECTION */}
           {normalizedTab === 'about us' && (
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <h3 className="text-base font-black text-white uppercase tracking-wider text-left">FOUNDER AKSHAY KHRINTA & VISION</h3>
-                <p className="text-xs text-slate-300 leading-relaxed text-left">
-                  <strong>Akshay Khrinta</strong> is the <strong>Founder of Jaat Cricket League (JCL)</strong>, a sports entrepreneur from Rajasthan, and the Managing Director of <strong>SNEXGEN</strong>. With over <strong>10+ years of experience</strong> in sports management and event operations, he is also the Co-Founder of <strong>The Age India</strong> and <strong>The Rakt India</strong> media platforms.
-                </p>
-                <p className="text-xs text-slate-300 leading-relaxed text-left">
-                  Over the years, he has organized and managed events such as Shekhawati Kabaddi League, BD Kabaddi League, Jaipur Sports League, Ultra Marathon, and Half Marathon events. He has also worked with leagues like UPKL, UPPVL, ISPL, and RKL, gaining exposure to professional league environments similar to <strong>PKL and IPL standards</strong>.
-                </p>
-                <p className="text-xs text-slate-300 leading-relaxed text-left">
-                  Being a former cricket and kabaddi player himself, Akshay remains closely connected to grassroots sports and youth talent. Through JCL, his vision is to create a <strong>professional national-level platform dedicated to talented players from Jaat Samaj</strong> and provide them with bigger opportunities, exposure, and recognition through sports. His aim is to <strong>unite the Jaat community through cricket</strong> and build one of India's leading community-based cricket leagues focused on <strong>youth empowerment, unity, and sports development</strong>.
-                </p>
+            <div className="space-y-4 text-center">
+              <div className="rounded-xl overflow-hidden border border-slate-800 bg-slate-950/40 p-1">
+                <img 
+                  src="https://i.postimg.cc/k4w0M8sW/Whats-App-Image-2026-06-06-at-15-00-47.jpg" 
+                  alt="Akshay Khrinta — JCL Founder & Operations Head" 
+                  className="w-full h-auto object-contain rounded-lg shadow-lg" 
+                  referrerPolicy="no-referrer"
+                />
               </div>
-
-              {/* Founder's Key Professional Pillars */}
-              <div className="bg-slate-900/60 rounded-xl p-5 border border-slate-800 space-y-4">
-                <h4 className="text-xs font-black text-white tracking-widest uppercase flex items-center space-x-2 border-b border-slate-800 pb-2.5">
-                  <Info size={14} className="text-indigo-400" />
-                  <span>FOUNDER'S STRATEGIC DEVELOPMENT PILLARS</span>
-                </h4>
-                
-                <div className="space-y-3.5 text-xs text-slate-300">
-                  <div className="text-left">
-                    <span className="font-black text-yellow-500 block font-sans">1. EQUAL OPPORTUNITY TALENT PIPELINE</span>
-                    <p className="text-slate-400 leading-relaxed mt-1 text-[11px]">
-                      Providing talented youth from all backgrounds access to elite selectors, high-quality match conditions, and national-level sports coverage without entry barriers.
-                    </p>
-                  </div>
-                  <div className="text-left">
-                    <span className="font-black text-yellow-500 block font-sans">2. COMPREHENSIVE GRASSROOT INFRASTRUCTURE</span>
-                    <p className="text-slate-400 leading-relaxed mt-1 text-[11px]">
-                      Establishing and funding training kits, standard turf pitches, state-of-the-art practice amenities, and specialized coaching camps at zero cost of entry for promising cricketers.
-                    </p>
-                  </div>
-                  <div className="text-left">
-                    <span className="font-black text-yellow-500 block font-sans">3. LIFESTYLE SHAPING & ANTI-DRUG CAMPAIGN</span>
-                    <p className="text-slate-400 leading-relaxed mt-1 text-[11px]">
-                      Utilizing high-performance team athletics to guide energy into constructive growth, instilling personal discipline and active physical wellness throughout communities.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-[11px] text-slate-400 uppercase tracking-widest font-mono">
+                Akshay Khrinta — Founder & Operations Head
+              </p>
             </div>
           )}
 
