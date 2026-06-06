@@ -57,7 +57,7 @@ const HERO_SLIDES = [
     image: vipGuestsImg,
     tagline: 'FOUNDER & LEADERSHIP CHRONICLES',
     title: 'Founder Akshay Khrinta',
-    subtitle: 'Providing professional cricket pathways, competitive tournaments, and elite exposure to youngsters in association with the International Jaat Parliament.'
+    subtitle: 'Spearheading regional sports development under the SNEXGEN Sports Foundation by delivering professional coaching programs and competitive tournament platforms directly to talented grassroot youth.'
   },
   {
     image: exhibitionMatchImg,
@@ -202,7 +202,9 @@ export default function App() {
                     isSelected ? 'text-cyan-400 font-extrabold' : 'text-slate-300 hover:scale-105'
                   }`}
                 >
-                  <span className="relative z-55 pointer-events-auto">{tab}</span>
+                  <span className="relative z-55 pointer-events-auto">
+                    {tab === 'about us' ? 'about founder' : tab}
+                  </span>
                   {isSelected && (
                     <motion.div
                       layoutId="activeTabUnderline"
@@ -301,7 +303,7 @@ export default function App() {
                             : 'text-slate-300 hover:bg-slate-900/20 hover:text-white border-transparent'
                         }`}
                       >
-                        {tab}
+                        {tab === 'about us' ? 'about founder' : tab}
                       </motion.button>
                     );
                   })}
@@ -884,35 +886,39 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <div className="inline-flex items-center space-x-1.5 bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border border-indigo-500/20">
+              <div className="inline-flex items-center space-x-1.5 bg-yellow-500/10 text-yellow-400 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border border-yellow-500/20">
                 <Info size={14} />
-                <span>ABOUT JAAT CRICKET LEAGUE (JCL)</span>
+                <span>ABOUT FOUNDER - AKSHAY KHRINTA</span>
               </div>
               
               <h2 className="text-4xl font-extrabold text-white tracking-tight capitalize leading-tight">
-                India's Premier High-Impact Cricket Tournament
+                About Founder & Operations Head
               </h2>
               
-              <p className="text-slate-350 leading-relaxed text-sm sm:text-base">
-                Jaat Cricket League (JCL) is a premier cricket platform created to identify, nurture, and promote cricketing talent from across India. Our mission is to provide aspiring players with professional opportunities, high-quality competition, and a pathway to showcase their skills on a larger stage.
+              <p className="text-slate-200 leading-relaxed text-sm sm:text-base">
+                <strong>Akshay Khrinta</strong> is the <strong>Founder of Jaat Cricket League (JCL)</strong>, a sports entrepreneur from Rajasthan, and the Managing Director of <strong>SNEXGEN</strong>. With over <strong>10+ years of experience</strong> in sports management and event operations, he is also the Co-Founder of <strong>The Age India</strong> and <strong>The Rakt India</strong> media platforms.
               </p>
 
-              <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                JCL is more than just a cricket tournament—it is a movement dedicated to empowering youth through sports, discipline, and healthy competition. By bringing together talented players, experienced coaches, academies, and sports professionals, we aim to create a strong cricketing ecosystem that helps players progress in their careers.
+              <p className="text-slate-300 leading-relaxed text-sm">
+                Over the years, he has organized and managed events such as Shekhawati Kabaddi League, BD Kabaddi League, Jaipur Sports League, Ultra Marathon, and Half Marathon events. He has also worked with leagues like UPKL, UPPVL, ISPL, and RKL, gaining exposure to professional league environments similar to <strong>PKL and IPL standards</strong>.
+              </p>
+
+              <p className="text-slate-300 leading-relaxed text-sm">
+                Being a former cricket and kabaddi player himself, Akshay remains closely connected to grassroots sports and youth talent. Through JCL, his vision is to create a <strong>professional national-level platform dedicated to talented players from Jaat Samaj</strong> and provide them with bigger opportunities, exposure, and recognition through sports. His aim is to <strong>unite the Jaat community through cricket</strong> and build one of India's leading community-based cricket leagues focused on <strong>youth empowerment, unity, and sports development</strong>.
               </p>
 
               <div className="grid grid-cols-3 gap-6 pt-4 border-t border-slate-800/80 font-mono text-center">
                 <div>
-                  <span className="block text-2xl sm:text-3xl font-black text-cyan-400">1</span>
-                  <span className="text-[10px] text-slate-500 uppercase font-sans font-bold tracking-wider mt-1 block">Inaugural Season</span>
+                  <span className="block text-2xl sm:text-3xl font-black text-cyan-400">FOUNDER</span>
+                  <span className="text-[10px] text-slate-500 uppercase font-sans font-bold tracking-wider mt-1 block">Lead Visionary</span>
                 </div>
                 <div>
-                  <span className="block text-2xl sm:text-3xl font-black text-rose-500">8</span>
-                  <span className="text-[10px] text-slate-500 uppercase font-sans font-bold tracking-wider mt-1 block">Elite Squads</span>
+                  <span className="block text-2xl sm:text-3xl font-black text-rose-500">SNEXGEN</span>
+                  <span className="text-[10px] text-slate-500 uppercase font-sans font-bold tracking-wider mt-1 block">Sports Platform</span>
                 </div>
                 <div>
-                  <span className="block text-2xl sm:text-3xl font-black text-yellow-400">10M+</span>
-                  <span className="text-[10px] text-slate-500 uppercase font-sans font-bold tracking-wider mt-1 block">Est. Reach</span>
+                  <span className="block text-2xl sm:text-3xl font-black text-yellow-400">100%</span>
+                  <span className="text-[10px] text-slate-500 uppercase font-sans font-bold tracking-wider mt-1 block">Youth Focused</span>
                 </div>
               </div>
             </motion.div>
@@ -927,18 +933,19 @@ export default function App() {
               {/* Decorative Sports Background Illustration */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent z-10" />
               <img
-                src="https://picsum.photos/seed/cricketturf/450/450"
-                alt="JCL Stadium Turf Highlight"
+                src={vipGuestsImg}
+                alt="Founder Akshay Khrinta & Sports Dignitaries"
                 className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
                 loading="lazy"
               />
               <div className="absolute bottom-6 left-6 right-6 z-20">
-                <span className="text-[10px] font-mono font-bold tracking-widest text-cyan-400 bg-cyan-900/40 px-3 py-1 rounded-full border border-cyan-500/25">
-                  STADIUM HIGHLIGHT
+                <span className="text-[10px] font-mono font-bold tracking-widest text-yellow-400 bg-yellow-950/40 px-3 py-1 rounded-full border border-yellow-500/25">
+                  FOUNDER PROFILE
                 </span>
-                <h4 className="text-white text-lg font-bold mt-3">SMS Indoor Complex, Jaipur</h4>
-                <p className="text-slate-300 text-xs mt-1">Hosting all matches of the current seasonal leg with record-breaking full seat capacities.</p>
+                <h4 className="text-white text-lg font-bold mt-3">Akshay Khrinta</h4>
+                <p className="text-yellow-400 text-xs font-bold font-mono">Founder & Operations Head</p>
+                <p className="text-slate-300 text-xs mt-0.5 font-sans">JAAT CRICKET LEAGUE (JCL)</p>
               </div>
             </motion.div>
 
@@ -1126,7 +1133,7 @@ export default function App() {
                 </li>
                 <li>
                   <button onClick={() => scrollToSection('about-section', 'about')} className="hover:text-yellow-400 transition-colors py-0.5 cursor-pointer block text-left">
-                    About Us
+                    About Founder
                   </button>
                 </li>
                 <li>

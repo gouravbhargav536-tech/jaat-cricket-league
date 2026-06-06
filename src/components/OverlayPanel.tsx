@@ -113,7 +113,7 @@ export function OverlayPanel({ isOpen, onClose, tabName }: OverlayPanelProps) {
           <div className="text-center">
             <span className="text-[10px] text-cyan-400 font-extrabold tracking-widest uppercase block mb-0.5">EXPLORE HUB</span>
             <h2 className="text-sm font-black tracking-widest text-white uppercase font-sans">
-              {tabName === 'about us' ? 'ABOUT THE LEAGUE' : tabName}
+              {tabName === 'about us' ? 'ABOUT FOUNDER' : tabName}
             </h2>
           </div>
 
@@ -696,45 +696,42 @@ export function OverlayPanel({ isOpen, onClose, tabName }: OverlayPanelProps) {
           {normalizedTab === 'about us' && (
             <div className="space-y-6">
               <div className="space-y-4">
-                <h3 className="text-base font-black text-white uppercase tracking-wider text-left">THE VISION OF JAAT CRICKET LEAGUE</h3>
+                <h3 className="text-base font-black text-white uppercase tracking-wider text-left">FOUNDER AKSHAY KHRINTA & VISION</h3>
                 <p className="text-xs text-slate-300 leading-relaxed text-left">
-                  Jaat Cricket League (JCL) is a premier cricket platform created to identify, nurture, and promote cricketing talent from across India. Our mission is to provide aspiring players with professional opportunities, high-quality competition, and a pathway to showcase their skills on a larger stage.
+                  <strong>Akshay Khrinta</strong> is the <strong>Founder of Jaat Cricket League (JCL)</strong>, a sports entrepreneur from Rajasthan, and the Managing Director of <strong>SNEXGEN</strong>. With over <strong>10+ years of experience</strong> in sports management and event operations, he is also the Co-Founder of <strong>The Age India</strong> and <strong>The Rakt India</strong> media platforms.
                 </p>
-                <p className="text-xs text-slate-305 leading-relaxed text-left">
-                  JCL is more than just a cricket tournament—it is a movement dedicated to empowering youth through sports, discipline, and healthy competition. By bringing together talented players, experienced coaches, academies, and sports professionals, we aim to create a strong cricketing ecosystem that helps players progress in their careers.
+                <p className="text-xs text-slate-300 leading-relaxed text-left">
+                  Over the years, he has organized and managed events such as Shekhawati Kabaddi League, BD Kabaddi League, Jaipur Sports League, Ultra Marathon, and Half Marathon events. He has also worked with leagues like UPKL, UPPVL, ISPL, and RKL, gaining exposure to professional league environments similar to <strong>PKL and IPL standards</strong>.
+                </p>
+                <p className="text-xs text-slate-300 leading-relaxed text-left">
+                  Being a former cricket and kabaddi player himself, Akshay remains closely connected to grassroots sports and youth talent. Through JCL, his vision is to create a <strong>professional national-level platform dedicated to talented players from Jaat Samaj</strong> and provide them with bigger opportunities, exposure, and recognition through sports. His aim is to <strong>unite the Jaat community through cricket</strong> and build one of India's leading community-based cricket leagues focused on <strong>youth empowerment, unity, and sports development</strong>.
                 </p>
               </div>
 
-              {/* Educational Rulebook container */}
+              {/* Founder's Key Professional Pillars */}
               <div className="bg-slate-900/60 rounded-xl p-5 border border-slate-800 space-y-4">
                 <h4 className="text-xs font-black text-white tracking-widest uppercase flex items-center space-x-2 border-b border-slate-800 pb-2.5">
                   <Info size={14} className="text-indigo-400" />
-                  <span>OFFICIAL JCL CRICKET MATCH RULES SUMMARY</span>
+                  <span>FOUNDER'S STRATEGIC DEVELOPMENT PILLARS</span>
                 </h4>
                 
                 <div className="space-y-3.5 text-xs text-slate-300">
                   <div className="text-left">
-                    <span className="font-black text-yellow-500 block font-sans">1. POWERPLAY MANDATES</span>
-                    <p className="text-slate-405 leading-relaxed mt-1 text-[11px]">
-                      In T20 matches, the first 6 overs represent the fielding restrictions Powerplay, where only 2 fielders are allowed outside the 30-yard boundary circle, enabling explosive boundaries.
+                    <span className="font-black text-yellow-500 block font-sans">1. EQUAL OPPORTUNITY TALENT PIPELINE</span>
+                    <p className="text-slate-400 leading-relaxed mt-1 text-[11px]">
+                      Providing talented youth from all backgrounds access to elite selectors, high-quality match conditions, and national-level sports coverage without entry barriers.
                     </p>
                   </div>
                   <div className="text-left">
-                    <span className="font-black text-yellow-500 block font-sans">2. THE FREE HIT EXTRA</span>
-                    <p className="text-slate-405 leading-relaxed mt-1 text-[11px]">
-                      Following a front-foot no-ball, a Free Hit is declared for the subsequent delivery. In a Free Hit, the batsman cannot be dismissed in any standard manner except run-out, encouraging maximum athletic hit releases.
+                    <span className="font-black text-yellow-500 block font-sans">2. COMPREHENSIVE GRASSROOT INFRASTRUCTURE</span>
+                    <p className="text-slate-400 leading-relaxed mt-1 text-[11px]">
+                      Establishing and funding training kits, standard turf pitches, state-of-the-art practice amenities, and specialized coaching camps at zero cost of entry for promising cricketers.
                     </p>
                   </div>
                   <div className="text-left">
-                    <span className="font-black text-yellow-500 block font-sans">3. THE SUPER OVER DECIDER</span>
-                    <p className="text-slate-405 leading-relaxed mt-1 text-[11px]">
-                      If scores are completely tied when both teams finish their 20 overs, a thrilling Super Over is played. Each team faces 1 over (6 balls) to score the maximum runs to decide the absolute winner.
-                    </p>
-                  </div>
-                  <div className="text-left">
-                    <span className="font-black text-yellow-500 block font-sans">4. NET RUN RATE (NRR)</span>
-                    <p className="text-slate-405 leading-relaxed mt-1 text-[11px]">
-                      The league standings are calculated using win-loss ratios and Net Run Rate (NRR), based on a comparison of a team's scoring speed vs. the bowling speed they concede throughout the tournament.
+                    <span className="font-black text-yellow-500 block font-sans">3. LIFESTYLE SHAPING & ANTI-DRUG CAMPAIGN</span>
+                    <p className="text-slate-400 leading-relaxed mt-1 text-[11px]">
+                      Utilizing high-performance team athletics to guide energy into constructive growth, instilling personal discipline and active physical wellness throughout communities.
                     </p>
                   </div>
                 </div>
