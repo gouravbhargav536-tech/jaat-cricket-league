@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { useEffect } from 'react';
+import batsmanIcon from '../assets/images/cricket_batsman_icon_1781349432299.jpg';
 
 interface SplashIntroProps {
   onEnter: () => void;
@@ -52,14 +53,25 @@ export function SplashIntro({ onEnter }: SplashIntroProps) {
               className="absolute -inset-16 border border-yellow-500/10 rounded-full"
             />
 
-            <div className="w-48 h-48 relative z-10">
+            <motion.div 
+              animate={{ 
+                y: [0, -5, 0],
+                scale: [1, 1.02, 1]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+              className="w-48 h-48 relative z-10"
+            >
               <img 
-                src="../assets/images/jcl_player_silhouette_1781349231563.jpg" 
+                src={batsmanIcon} 
                 alt="JCL Batsman"
                 className="w-full h-full object-contain filter drop-shadow-[0_0_20px_rgba(34,211,238,0.6)] mix-blend-screen"
                 referrerPolicy="no-referrer"
               />
-            </div>
+            </motion.div>
           </motion.div>
         </div>
 
