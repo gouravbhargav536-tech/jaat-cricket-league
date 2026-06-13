@@ -10,78 +10,55 @@ export function SplashIntro({ onEnter }: SplashIntroProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onEnter();
-    }, 1800); // 1.5s visual + 300ms buffer for exit animation transition
+    }, 1500); // Exactly 1.5 seconds as requested
     return () => clearTimeout(timer);
   }, [onEnter]);
 
   return (
     <motion.div 
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 1.1, filter: 'blur(10px)' }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      exit={{ opacity: 0, scale: 1.05, filter: 'blur(8px)' }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className="fixed inset-0 z-[100] bg-[#07031e] flex flex-col items-center justify-center overflow-hidden"
     >
       {/* High-energy background bursts */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 2, opacity: 0.15 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-indigo-600 blur-[150px] rounded-full" 
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 2, opacity: 0.1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-cyan-500 blur-[150px] rounded-full" 
         />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
       </div>
 
       <div className="relative z-10 flex flex-col items-center">
-        {/* Stylized Batsman Icon (Moving) */}
-        <div className="relative mb-8">
+        {/* Professional Batsman Image/Icon */}
+        <div className="relative mb-6">
           <motion.div
-            initial={{ x: -200, opacity: 0, rotate: -20 }}
-            animate={{ x: 0, opacity: 1, rotate: 0 }}
-            transition={{ type: "spring", stiffness: 100, damping: 15, duration: 0.8 }}
+            initial={{ y: 20, opacity: 0, scale: 0.8 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            transition={{ type: "spring", stiffness: 120, damping: 12, duration: 0.6 }}
             className="relative"
           >
-            {/* Stylized Batsman Icon (Moving) */}
-            <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white drop-shadow-[0_0_30px_rgba(34,211,238,0.4)]">
-              {/* Batting Stance Body */}
-              <motion.g
-                initial={{ rotate: -5, x: -10 }}
-                animate={{ rotate: 5, x: 0 }}
-                transition={{ duration: 0.6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-              >
-                <circle cx="12" cy="4" r="2" fill="currentColor" />
-                <path d="M12 6v6l-4 4" strokeWidth="2" />
-                <path d="M12 8l5-1" strokeWidth="2" />
-                
-                {/* Bat with swing motion */}
-                <motion.path 
-                  initial={{ rotate: -60, x: 2, y: 0 }}
-                  animate={{ rotate: 20, x: 5, y: -2 }}
-                  transition={{ duration: 0.3, repeat: Infinity, repeatType: "reverse", ease: "backOut" }}
-                  d="M17 5l3 12" 
-                  className="stroke-yellow-400"
-                  strokeWidth="3"
-                  style={{ transformOrigin: "17px 5px" }}
-                />
-              </motion.g>
-              
-              {/* Ground line */}
-              <motion.path 
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8 }}
-                d="M4 21h16" 
-                stroke="currentColor" 
-                strokeWidth="1" 
-                opacity="0.3" 
+            {/* Swirl/Aura effect similar to IPL logo */}
+            <motion.div 
+              animate={{ rotate: 360 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              className="absolute -inset-10 border-2 border-dashed border-cyan-500/20 rounded-full"
+            />
+            <motion.div 
+              animate={{ rotate: -360 }}
+              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+              className="absolute -inset-16 border border-yellow-500/10 rounded-full"
+            />
+
+            <div className="w-48 h-48 relative z-10">
+              <img 
+                src="../assets/images/jcl_player_silhouette_1781349231563.jpg" 
+                alt="JCL Batsman"
+                className="w-full h-full object-contain filter drop-shadow-[0_0_20px_rgba(34,211,238,0.6)] mix-blend-screen"
+                referrerPolicy="no-referrer"
               />
-            </svg>
-            
-            {/* Speed lines behind the player */}
-            <div className="absolute -left-10 top-1/2 -translate-y-1/2 flex flex-col gap-1">
-              <motion.div initial={{ width: 0 }} animate={{ width: 40 }} transition={{ delay: 0.3 }} className="h-0.5 bg-cyan-500/50 rounded-full" />
-              <motion.div initial={{ width: 0 }} animate={{ width: 60 }} transition={{ delay: 0.4 }} className="h-0.5 bg-yellow-500/50 rounded-full" />
-              <motion.div initial={{ width: 0 }} animate={{ width: 30 }} transition={{ delay: 0.5 }} className="h-0.5 bg-indigo-500/50 rounded-full" />
             </div>
           </motion.div>
         </div>
