@@ -41,24 +41,40 @@ export function SplashIntro({ onEnter }: SplashIntroProps) {
             transition={{ type: "spring", stiffness: 100, damping: 15, duration: 0.8 }}
             className="relative"
           >
-            {/* Simple Stylized Batsman Shape using SVG to mimic a sports logo */}
-            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400 drop-shadow-[0_0_20px_rgba(250,204,21,0.5)]">
-              {/* Head */}
-              <circle cx="12" cy="5" r="2" />
-              {/* Body and Arms in batting stance */}
-              <path d="M12 7v6l-4 4" />
-              <path d="M12 9l6-2" />
-              <path d="M18 7l2 4" />
-              {/* Bat */}
+            {/* Stylized Batsman Icon (Moving) */}
+            <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white drop-shadow-[0_0_30px_rgba(34,211,238,0.4)]">
+              {/* Batting Stance Body */}
+              <motion.g
+                initial={{ rotate: -5, x: -10 }}
+                animate={{ rotate: 5, x: 0 }}
+                transition={{ duration: 0.6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+              >
+                <circle cx="12" cy="4" r="2" fill="currentColor" />
+                <path d="M12 6v6l-4 4" strokeWidth="2" />
+                <path d="M12 8l5-1" strokeWidth="2" />
+                
+                {/* Bat with swing motion */}
+                <motion.path 
+                  initial={{ rotate: -60, x: 2, y: 0 }}
+                  animate={{ rotate: 20, x: 5, y: -2 }}
+                  transition={{ duration: 0.3, repeat: Infinity, repeatType: "reverse", ease: "backOut" }}
+                  d="M17 5l3 12" 
+                  className="stroke-yellow-400"
+                  strokeWidth="3"
+                  style={{ transformOrigin: "17px 5px" }}
+                />
+              </motion.g>
+              
+              {/* Ground line */}
               <motion.path 
-                initial={{ rotate: -45 }}
-                animate={{ rotate: 10 }}
-                transition={{ duration: 0.4, repeat: 3, repeatType: "reverse", ease: "easeInOut" }}
-                d="M18 5l2 10" 
-                className="stroke-cyan-400"
-                strokeWidth="2.5"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8 }}
+                d="M4 21h16" 
+                stroke="currentColor" 
+                strokeWidth="1" 
+                opacity="0.3" 
               />
-              <path d="M8 20h8" />
             </svg>
             
             {/* Speed lines behind the player */}

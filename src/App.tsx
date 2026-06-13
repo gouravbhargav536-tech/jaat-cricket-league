@@ -82,16 +82,10 @@ export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [videoCategory, setVideoCategory] = useState<string>('All');
-  const [hasEntered, setHasEntered] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      return sessionStorage.getItem('jcl_entered') === 'true';
-    }
-    return false;
-  });
+  const [hasEntered, setHasEntered] = useState<boolean>(false);
 
   const handleEnterSite = () => {
     setHasEntered(true);
-    sessionStorage.setItem('jcl_entered', 'true');
   };
 
 
