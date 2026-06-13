@@ -9,6 +9,7 @@ import { Team, Match, Video } from './types';
 import { TeamLogo } from './components/TeamLogo';
 import { PlayerSpotlight } from './components/PlayerSpotlight';
 import { SiteIntro } from './components/SiteIntro';
+import { SplashIntro } from './components/SplashIntro';
 import { SponsorLogo } from './components/SponsorLogo';
 import { MatchCard } from './components/MatchCard';
 import { TeamDetailModal } from './components/TeamDetailModal';
@@ -81,6 +82,17 @@ export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [videoCategory, setVideoCategory] = useState<string>('All');
+  const [hasEntered, setHasEntered] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return sessionStorage.getItem('jcl_entered') === 'true';
+    }
+    return false;
+  });
+
+  const handleEnterSite = () => {
+    setHasEntered(true);
+    sessionStorage.setItem('jcl_entered', 'true');
+  };
 
 
   // Sourced lists
@@ -170,6 +182,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#07031e] text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-900 overflow-x-hidden antialiased">
+      <AnimatePresence mode="wait">
+        {!hasEntered && (
+          <SplashIntro key="splash" onEnter={handleEnterSite} />
+        )}
+      </AnimatePresence>
+
       {/* 1. Header/Nav Bar */}
       <header className="sticky top-0 z-50 bg-[#0d0935]/95 backdrop-blur-md border-b border-indigo-950/60 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
@@ -192,8 +210,8 @@ export default function App() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex flex-wrap items-center justify-center gap-x-5 gap-y-2 relative z-50">
-            {(['home', 'teams', 'matches', 'stats', 'sponsors', 'about us', 'contact'] as const).map((tab) => {
-              const tabId = tab === 'about us' ? 'about' : tab;
+            {(['home', 'mission', 'teams', 'matches', 'stats', 'sponsors', 'about us', 'contact'] as const).map((tab) => {
+              const tabId = tab === 'about us' ? 'about' : (tab === 'mission' ? 'intro' : tab);
               const sectionId = `${tabId}-section`;
               const isSelected = activeTab === tabId;
               return (
@@ -302,8 +320,8 @@ export default function App() {
                 </div>
 
                 <div className="flex flex-col space-y-3">
-                  {(['home', 'teams', 'matches', 'stats', 'sponsors', 'about us', 'contact'] as const).map((tab, idx) => {
-                    const tabId = tab === 'about us' ? 'about' : tab;
+                  {(['home', 'mission', 'teams', 'matches', 'stats', 'sponsors', 'about us', 'contact'] as const).map((tab, idx) => {
+                    const tabId = tab === 'about us' ? 'about' : (tab === 'mission' ? 'intro' : tab);
                     const sectionId = `${tabId}-section`;
                     const isSelected = activeTab === tabId;
                     return (
@@ -470,7 +488,9 @@ export default function App() {
       </section>
 
       {/* Site Introduction Section */}
-      <SiteIntro />
+      <div id="intro-section">
+        <SiteIntro />
+      </div>
 
 
       {/* 3. Teams List Page Section */}

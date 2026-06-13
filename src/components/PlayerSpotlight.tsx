@@ -52,36 +52,21 @@ export function PlayerSpotlight() {
     return { player: randomPlayer, team: randomTeam, stats, image: TEAM_IMAGES[randomTeam.id] || playerHaryana };
   };
 
-  const fetchBio = async (playerName: string, teamName: string, role: string) => {
-    setLoading(true);
-    try {
-      const response = await fetch('/api/generate-bio', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ playerName, teamName, role }),
-      });
-      
-      const data = await response.json();
-
-      if (!response.ok) {
-        if (response.status === 429) {
-          return "Our scouts are busy analyzing thousands of players. This athlete remains a key pillar of their team's strategy and community pride.";
-        }
-        throw new Error(data.error || 'Failed to generate bio');
-      }
-      
-      return data.bio;
-    } catch (err) {
-      console.warn("Bio generation failed, using fallback:", err);
-      return "An elite athlete representing their community with pride and skill in the JCL. Known for their dedication and exceptional performance on the big stage.";
-    } finally {
-      setLoading(false);
-    }
+  const generateStaticBio = (player: any, team: Team) => {
+    const descriptors = [
+      "A powerhouse performer known for clutch moments and unwavering dedication to the team's victory.",
+      "An inspiration to the youth, carrying the legacy of their community with every boundary and wicket.",
+      "A strategic master on the field whose presence alone shifts the momentum of the game.",
+      "Combines raw talent with disciplined training to represent the pride of their home region.",
+      "A true sportsman whose leadership and skill-set make them a vital asset to the league."
+    ];
+    const index = Math.abs(player.name.length + team.name.length) % descriptors.length;
+    return descriptors[index];
   };
 
-  const updateSpotlight = async () => {
+  const updateSpotlight = () => {
     const { player, team, stats, image } = getRandomPlayer();
-    const bio = await fetchBio(player.name, team.name, player.role);
+    const bio = generateStaticBio(player, team);
     setSpotlightData({ player, team, bio, stats, image });
   };
 
