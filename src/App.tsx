@@ -7,6 +7,8 @@ import { useState, useEffect, useRef, RefObject, FormEvent } from 'react';
 import { TEAMS, MATCHES, SPONSORS, VIDEOS } from './data';
 import { Team, Match, Video } from './types';
 import { TeamLogo } from './components/TeamLogo';
+import { PlayerSpotlight } from './components/PlayerSpotlight';
+import { SiteIntro } from './components/SiteIntro';
 import { SponsorLogo } from './components/SponsorLogo';
 import { MatchCard } from './components/MatchCard';
 import { TeamDetailModal } from './components/TeamDetailModal';
@@ -233,7 +235,24 @@ export default function App() {
               onClick={() => setMobileMenuOpen(true)}
               className="p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-[#07031e]/60 transition-all duration-300 border border-transparent hover:border-indigo-950/40 cursor-pointer"
             >
-              <Menu size={24} />
+              <Menu 
+                size={24} 
+                style={{ 
+                  paddingLeft: '-4px', 
+                  paddingTop: '-4px', 
+                  width: '30px', 
+                  height: '29px', 
+                  marginLeft: '-2px', 
+                  textAlign: 'justify', 
+                  fontWeight: 'bold', 
+                  fontFamily: 'Georgia', 
+                  lineHeight: '27px', 
+                  borderColor: '#e63714', 
+                  borderStyle: 'groove', 
+                  borderWidth: '3px', 
+                  backgroundColor: '#09043b' 
+                }} 
+              />
             </button>
           </div>
         </div>
@@ -450,6 +469,9 @@ export default function App() {
         </div>
       </section>
 
+      {/* Site Introduction Section */}
+      <SiteIntro />
+
 
       {/* 3. Teams List Page Section */}
       <section id="teams-section" className="bg-[#0b062b] border-y border-indigo-950/80 py-24 relative">
@@ -492,6 +514,9 @@ export default function App() {
 
         </div>
       </section>
+
+      {/* Player Spotlight Section */}
+      <PlayerSpotlight />
 
       {/* 4. Matches Section */}
       <section id="matches-section" className="bg-[#07031e] py-24 border-b border-indigo-950/80">
